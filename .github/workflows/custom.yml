@@ -21,7 +21,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [-f requirements.txt]; ten pip install -r requirements.txt; -f
+          python -m pip install --upgrade pip
+          if [-f requirements.txt]; then pip install -r requirements.txt; -f
       - name: Check the Syntax with flake8
         run: |
           flake8 . --count --satistics
